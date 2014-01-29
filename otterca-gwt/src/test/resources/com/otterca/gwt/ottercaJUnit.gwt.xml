@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module>
+  <!-- Inherit our applications main module.                      -->
+  <inherits name='com.otterca.gwt.otterca' />
+
+  <!-- Specify the path to any remote services.                   -->
+  <servlet path="/otterca/greet" class="com.otterca.gwt.server.GreetingServiceImpl" />
+
+</module>

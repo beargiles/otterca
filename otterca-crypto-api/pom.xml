@@ -1,0 +1,40 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<artifactId>otterca</artifactId>
+		<groupId>com.otterca</groupId>
+		<version>0.0.5-SNAPSHOT</version>
+		<relativePath>..</relativePath>
+	</parent>
+	<artifactId>otterca-crypto-api</artifactId>
+
+	<name>OtterCA Cryptographic API</name>
+	<description>
+		The Cryptographic API provides an interface to the 
+		cryptographic libraries. It is very important that all
+		cryptographic functionality be abstracted through this
+		module so the rest of the modules are not subject to 
+		export or import restrictions.
+	</description>
+
+	<dependencies>
+		<dependency>
+			<groupId>com.google.code.findbugs</groupId>
+			<artifactId>jsr305</artifactId>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+			</plugin>
+            <!-- <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+            </plugin> -->
+		</plugins>
+	</build>
+</project>

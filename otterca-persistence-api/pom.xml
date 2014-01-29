@@ -1,0 +1,33 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<artifactId>otterca</artifactId>
+		<groupId>com.otterca</groupId>
+		<version>0.0.5-SNAPSHOT</version>
+		<relativePath>..</relativePath>
+	</parent>
+	<artifactId>otterca-persistence-api</artifactId>
+	<name>OtterCA Persistence API</name>
+	<description>The Persistence API provides an interface to the persistence libraries for storing certificates and other data. This makes it easier to use either NoSQL or a traditional RDBMS for the backend.</description>
+
+	<dependencies>
+		<dependency>
+			<groupId>com.google.code.findbugs</groupId>
+			<artifactId>jsr305</artifactId>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+			</plugin>
+            <!-- <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+            </plugin>-->
+		</plugins>
+	</build>
+</project>

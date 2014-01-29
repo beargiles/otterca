@@ -1,0 +1,296 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.otterca</groupId>
+	<artifactId>otterca</artifactId>
+	<version>0.0.4-SNAPSHOT</version>
+	<packaging>pom</packaging>
+	<name>Otter Certificate Authority</name>
+	<description>
+		This is the parent of all OtterCA modules. These modules are:
+
+        Registration Authority (RA) - provides a mechanism for subjects
+		and Relying Entities to request certificates or revocations.
+
+		Certificate Authority (CA) - provides a mechanism for actually
+		signing certificates. This may require user intervention with
+		high-value keys.
+
+		Repository - provides a mechanism to publish issued certificates
+		and get Online Certificate Status Protocol (OCSP) responses.
+
+		Cryptographic API - provides an abstraction layer for all
+		cryptographic functionality. This ensures everything other than
+		the specific module implementing this API is not subject to
+		export or import control.
+
+		Persistence API - provides an abstraction layer for certificate
+		persistence. This facilitates the use of a traditional JPA
+		persistence mechanism in-house and a NoSQL persistence mechanism
+		"in the cloud."
+
+		Cryptographic Implementation using Bouncy Castle.
+
+		Persistence Implementation using Google DataStore - NoSQL.
+
+		Persistence Implementation using JPA - Oracle, PostgreSQL, H2, etc.
+	</description>
+	<url>http://otterca.com/</url>
+	<inceptionYear>2012</inceptionYear>
+
+	<licenses>
+		<license>
+			<name>Apache License, Version 2.0</name>
+		</license>
+	</licenses>
+
+	<developers>
+		<developer>
+			<name>Bear Giles</name>
+			<email>bgiles@otterca.com</email>
+			<roles>
+				<role>owner</role>
+			</roles>
+		</developer>
+	</developers>
+
+	<!-- <issueManagement> <system> </system><url></url></issueManagement> -->
+
+	<scm>
+		<connection>scm:svn:http://otterca.googlecode.com/svn/trunk/otterca</connection>
+		<developerConnection>scm:svn:https://otterca.googlecode.com/svn/trunk/otterca</developerConnection>
+	</scm>
+
+	<modules>
+		<module>otterca-crypto-api</module>
+		<module>otterca-persistence-api</module>
+
+		<module>otterca-test-support</module>
+		<module>otterca-crypto-bouncycastle</module>
+
+		<module>otterca-persistence-google-datastore</module>
+		<module>otterca-persistence-jpa</module>
+		<module>otterca-repository</module>
+		<module>otterca-certificate-authority</module>
+		<module>otterca-registration-authority</module>
+		<!-- <module>otterca-gwt</module> -->
+	</modules>
+
+	<properties>
+		<spring.version>3.1.1.RELEASE</spring.version>
+		<otterca.version>0.0.4-SNAPSHOT</otterca.version>
+	</properties>
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>com.otterca</groupId>
+				<artifactId>otterca-persistence-api</artifactId>
+				<version>${otterca.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.otterca</groupId>
+				<artifactId>otterca-crypto-api</artifactId>
+				<version>${otterca.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.otterca</groupId>
+				<artifactId>otterca-test-support</artifactId>
+				<version>${otterca.version}</version>
+				<scope>test</scope>
+			</dependency>
+
+			<dependency>
+				<groupId>org.slf4j</groupId>
+				<artifactId>slf4j-log4j12</artifactId>
+				<version>1.6.4</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-core</artifactId>
+				<version>${spring.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-beans</artifactId>
+				<version>${spring.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-web</artifactId>
+				<version>${spring.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-context</artifactId>
+				<version>${spring.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>commons-lang</groupId>
+				<artifactId>commons-lang</artifactId>
+				<version>2.6</version>
+			</dependency>
+			<dependency>
+				<groupId>commons-codec</groupId>
+				<artifactId>commons-codec</artifactId>
+				<version>1.6</version>
+			</dependency>
+			<dependency>
+				<groupId>commons-digester</groupId>
+				<artifactId>commons-digester</artifactId>
+				<version>2.1</version>
+			</dependency>
+			<dependency>
+				<groupId>org.jasypt</groupId>
+				<artifactId>jasypt</artifactId>
+				<version>1.9.0</version>
+			</dependency>
+
+			<dependency>
+				<groupId>com.google.code.findbugs</groupId>
+				<artifactId>annotations</artifactId>
+				<version>2.0.0</version>
+			</dependency>
+			<dependency>
+				<groupId>com.google.code.findbugs</groupId>
+				<artifactId>jsr305</artifactId>
+				<version>2.0.0</version>
+			</dependency>
+
+			<!-- dependencies we only need for testing -->
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-test</artifactId>
+				<version>${spring.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.testng</groupId>
+				<artifactId>testng</artifactId>
+				<version>6.5.2</version>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
+	<build>
+		<!-- local optimization - keep compiled classes outside of main source 
+			tree so we can keep the latter on a backed-up location like DropBox. Otherwise 
+			the churn will quickly overwhelm the system. -->
+		<!-- commented out since a m2e bug now causes problems with external output directories. -->
+		<!-- <outputDirectory>/var/cache/otterca/target/classes</outputDirectory> -->
+		<!-- <testOutputDirectory>/var/cache/otterca/target/test-classes</testOutputDirectory> -->
+
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-compiler-plugin</artifactId>
+					<version>2.4</version>
+					<configuration>
+						<source>1.6</source>
+						<target>1.6</target>
+					</configuration>
+				</plugin>
+
+				<!-- <plugin> <groupId>org.apache.maven.plugins</groupId> <artifactId>maven-jar-plugin</artifactId> 
+					<version>2.4</version> <configuration> <archive> <index>true</index> <manifest> 
+					<addClasspath>true</addClasspath> </manifest> <manifestEntries> <mode>development</mode> 
+					<url>${project.url}</url> </manifestEntries> </archive> </configuration> 
+					</plugin> -->
+
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-scm-plugin</artifactId>
+					<version>1.0</version>
+					<configuration>
+						<goals>install</goals>
+					</configuration>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+	</build>
+
+
+	<profiles>
+		<!-- Jenkins defines a property BUILD_NUMBER which we can use to selectively 
+			enable Cobertura to reduce the load during normal development. -->
+		<profile>
+			<id>jenkins</id>
+			<activation>
+				<property>
+					<name>env.BUILD_NUMBER</name>
+				</property>
+			</activation>
+			<build>
+				<pluginManagement>
+					<plugins>
+						<plugin>
+							<groupId>org.codehaus.mojo</groupId>
+							<artifactId>cobertura-maven-plugin</artifactId>
+							<version>2.5.1</version>
+							<configuration>
+								<check>
+									<branchRate>85</branchRate>
+									<lineRate>85</lineRate>
+									<haltOnFailure>false</haltOnFailure>
+									<totalBranchRate>85</totalBranchRate>
+									<totalLineRate>85</totalLineRate>
+									<packageLineRate>85</packageLineRate>
+									<packageBranchRate>85</packageBranchRate>
+								</check>
+							</configuration>
+							<executions>
+								<execution>
+									<goals>
+										<goal>clean</goal>
+										<goal>check</goal>
+									</goals>
+								</execution>
+							</executions>
+						</plugin>
+					</plugins>
+				</pluginManagement>
+				<plugins>
+					<plugin>
+						<groupId>org.codehaus.mojo</groupId>
+						<artifactId>findbugs-maven-plugin</artifactId>
+						<version>2.4.0</version>
+						<configuration>
+							<xmlOutput>true</xmlOutput>
+						</configuration>
+					</plugin>
+				</plugins>
+			</build>
+			<reporting>
+				<plugins>
+					<!-- plugin> <groupId>org.codehaus.mojo</groupId> <artifactId>findbugs-checkstyle-plugin</artifactId> 
+						<version>2.9.1</version> <configuration> <suppressionsLocation>checkstyle-suppressions.xml</suppressionsLocation> 
+						</configuration> </plugin> -->
+
+					<plugin>
+						<groupId>org.codehaus.mojo</groupId>
+						<artifactId>findbugs-maven-plugin</artifactId>
+						<version>2.4.0</version>
+						<configuration>
+							<xmlOutput>true</xmlOutput>
+						</configuration>
+					</plugin>
+
+					<plugin>
+						<groupId>org.codehaus.mojo</groupId>
+						<artifactId>cobertura-maven-plugin</artifactId>
+						<version>2.5.1</version>
+					</plugin>
+
+					<plugin>
+						<groupId>org.codehaus.sonar</groupId>
+						<artifactId>sonar-maven-plugin</artifactId>
+						<version>3.0.1</version>
+					</plugin>
+
+					<!-- <plugin> <groupId>org.apache.maven.plugins</groupId> <artifactId>maven-surefire-report-plugin</artifactId> 
+						<version>2.12</version> </plugin> -->
+				</plugins>
+			</reporting>
+		</profile>
+	</profiles>
+</project>
