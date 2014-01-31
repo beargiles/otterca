@@ -58,7 +58,7 @@ import org.slf4j.LoggerFactory;
  */
 @SuppressWarnings("deprecation")
 public class X509CertificateUtilImpl implements X509CertificateUtil {
-    private static final Logger log = LoggerFactory
+    private static final Logger LOG = LoggerFactory
             .getLogger(X509CertificateUtilImpl.class);
     private static final ASN1ObjectIdentifier id_ad_caRepositories = new ASN1ObjectIdentifier(
             "1.3.6.1.5.5.7.48.5");
@@ -117,7 +117,7 @@ public class X509CertificateUtilImpl implements X509CertificateUtil {
                     }
                 }
             } catch (IOException e) {
-                log.info("impossible IOException in X509ExtensionUtil.fromExtensionValue(): "
+                LOG.info("impossible IOException in X509ExtensionUtil.fromExtensionValue(): "
                         + e.getMessage(), e);
             }
         }
@@ -156,7 +156,7 @@ public class X509CertificateUtilImpl implements X509CertificateUtil {
                     }
                 }
             } catch (IOException e) {
-                log.info("impossible IOException in X509ExtensionUtil.fromExtensionValue(): "
+                LOG.info("impossible IOException in X509ExtensionUtil.fromExtensionValue(): "
                         + e.getMessage(), e);
             }
         }
@@ -185,10 +185,10 @@ public class X509CertificateUtilImpl implements X509CertificateUtil {
                 dates[1] = (period.getNotAfter() != null) ? period
                         .getNotAfter().getDate() : null;
             } catch (IOException e) {
-                log.info("impossible IOException in X509ExtensionUtil.fromExtensionValue(): "
+                LOG.info("impossible IOException in X509ExtensionUtil.fromExtensionValue(): "
                         + e.getMessage(), e);
             } catch (ParseException e) {
-                log.info("impossible ParseException: " + e.getMessage(), e);
+                LOG.info("impossible ParseException: " + e.getMessage(), e);
             }
         }
         return dates;
@@ -285,7 +285,7 @@ public class X509CertificateUtilImpl implements X509CertificateUtil {
                 System.arraycopy(asn1.getOctets(), 2, buffer, 0, buffer.length);
                 depth = (new DERInteger(buffer)).getValue().intValue();
             } catch (IOException e) {
-                log.info("impossible IOException in X509ExtensionUtil.fromExtensionValue(): "
+                LOG.info("impossible IOException in X509ExtensionUtil.fromExtensionValue(): "
                         + e.getMessage(), e);
             }
         }
@@ -349,7 +349,7 @@ public class X509CertificateUtilImpl implements X509CertificateUtil {
                                                     .getName()).getString()));
                             break;
                         default:
-                            log.info("unexpected GeneralName type "
+                            LOG.info("unexpected GeneralName type "
                                     + desc.getAccessLocation().getTagNo()
                                     + " in certificate OCSPLocations extension");
                             break;
@@ -357,7 +357,7 @@ public class X509CertificateUtilImpl implements X509CertificateUtil {
                     }
                 }
             } catch (IOException e) {
-                log.info("impossible IOException in X509ExtensionUtil.fromExtensionValue(): "
+                LOG.info("impossible IOException in X509ExtensionUtil.fromExtensionValue(): "
                         + e.getMessage(), e);
             }
         }
@@ -402,14 +402,14 @@ public class X509CertificateUtilImpl implements X509CertificateUtil {
                                                     .getName()).getString()));
                             break;
                         default:
-                            log.info("unexpected GeneralName type "
+                            LOG.info("unexpected GeneralName type "
                                     + desc.getAccessLocation().getTagNo()
                                     + " in certificate CaIssuersLocations extension");
                         }
                     }
                 }
             } catch (IOException e) {
-                log.info("impossible IOException in X509ExtensionUtil.fromExtensionValue(): "
+                LOG.info("impossible IOException in X509ExtensionUtil.fromExtensionValue(): "
                         + e.getMessage(), e);
             }
         }
@@ -454,14 +454,14 @@ public class X509CertificateUtilImpl implements X509CertificateUtil {
                                                     .getName()).getString()));
                             break;
                         default:
-                            log.info("unexpected GeneralName type "
+                            LOG.info("unexpected GeneralName type "
                                     + desc.getAccessLocation().getTagNo()
                                     + " in certificate CaRepositories extension");
                         }
                     }
                 }
             } catch (IOException e) {
-                log.info("impossible IOException in X509ExtensionUtil.fromExtensionValue(): "
+                LOG.info("impossible IOException in X509ExtensionUtil.fromExtensionValue(): "
                         + e.getMessage(), e);
             }
         }
@@ -521,14 +521,14 @@ public class X509CertificateUtilImpl implements X509CertificateUtil {
                                                             .getOctets())));
                             break;
                         default:
-                            log.info("unexpected GeneralName type "
+                            LOG.info("unexpected GeneralName type "
                                     + desc.getAccessLocation().getTagNo()
                                     + " in certificate TimeStamping extension");
                         }
                     }
                 }
             } catch (IOException e) {
-                log.info("impossible IOException in X509ExtensionUtil.fromExtensionValue(): "
+                LOG.info("impossible IOException in X509ExtensionUtil.fromExtensionValue(): "
                         + e.getMessage(), e);
             }
         }
@@ -564,7 +564,7 @@ public class X509CertificateUtilImpl implements X509CertificateUtil {
                 try {
                     is.close();
                 } catch (IOException e) {
-                    log.info(
+                    LOG.info(
                             "impossible exception closing ByteArrayInputStream: {}",
                             e.getMessage(), e);
                 }

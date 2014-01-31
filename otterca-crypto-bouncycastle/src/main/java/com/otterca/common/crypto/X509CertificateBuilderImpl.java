@@ -110,7 +110,7 @@ import com.otterca.common.crypto.X509CertificateBuilderException.ErrorType;
 public class X509CertificateBuilderImpl implements X509CertificateBuilder {
     private static final ResourceBundle bundle = ResourceBundle
             .getBundle(X509CertificateBuilder.class.getName());
-    private static final Logger log = LoggerFactory
+    private static final Logger LOG = LoggerFactory
             .getLogger(X509CertificateBuilderImpl.class);
     public static final String SIGNATURE_ALGORITHM = bundle
             .getString("signatureAlgorithm");
@@ -1023,7 +1023,7 @@ public class X509CertificateBuilderImpl implements X509CertificateBuilder {
                             extGenerator.isCritical(), asn1);
                 }
             } catch (IOException e) {
-                log.info("X509Extension extraction threw IOException! "
+                LOG.info("X509Extension extraction threw IOException! "
                         + e.getMessage());
                 // throw an exception if this is an error in a critical
                 // extension. Otherwise
@@ -1136,7 +1136,7 @@ public class X509CertificateBuilderImpl implements X509CertificateBuilder {
             if (!errors.isEmpty()) {
                 X509CertificateBuilderException ex = new X509CertificateBuilderException(
                         errors);
-                log.debug("{}; values: {}", ex.getMessage(), this.toString());
+                LOG.debug("{}; values: {}", ex.getMessage(), this.toString());
                 throw ex;
             }
         }
@@ -1217,7 +1217,7 @@ public class X509CertificateBuilderImpl implements X509CertificateBuilder {
                     errors.add(ErrorType.ISSUER_CANNOT_SIGN_CERTIFICATES);
                 } else if ((pathLengthConstraint == null)
                         || (pathLenConstraint <= pathLengthConstraint)) {
-                    log.debug("path length constraint must be strictly decreasing");
+                    LOG.debug("path length constraint must be strictly decreasing");
                     pathLengthConstraint = pathLenConstraint - 1;
                 }
 
@@ -1243,7 +1243,7 @@ public class X509CertificateBuilderImpl implements X509CertificateBuilder {
                             && (issuerInhibitAnyPolicy < inhibitAnyPolicyDepth)) {
                         errors.add(ErrorType.INHIBIT_ANY_POLICY_DEPTH_MUST_DECREASE);
                     } else {
-                        log.debug("inhibitAnyPolicy was not set even though parent had one. Setting one.");
+                        LOG.debug("inhibitAnyPolicy was not set even though parent had one. Setting one.");
                         inhibitAnyPolicyDepth = issuerInhibitAnyPolicy - 1;
                     }
 
@@ -1310,7 +1310,7 @@ public class X509CertificateBuilderImpl implements X509CertificateBuilder {
             // verify pathLengthConstraint is not set if basicConstraint is not
             // set.
             if (!basicConstraint && (pathLengthConstraint != null)) {
-                log.debug("pathLengthConstraint must not be set if basicConstraint is not set");
+                LOG.debug("pathLengthConstraint must not be set if basicConstraint is not set");
                 pathLengthConstraint = null;
             }
 
@@ -1336,7 +1336,7 @@ public class X509CertificateBuilderImpl implements X509CertificateBuilder {
                 if (basicConstraint && (inhibitAnyPolicyDepth < 0)) {
                     errors.add(ErrorType.NEGATIVE_INHIBIT_ANY_POLICY_DEPTH);
                 } else if (!basicConstraint) {
-                    log.debug("inhibitAnyPolicy cannot be set for final certificate. Clearing it.");
+                    LOG.debug("inhibitAnyPolicy cannot be set for final certificate. Clearing it.");
                     inhibitAnyPolicyDepth = null;
                 }
             }
@@ -1354,7 +1354,7 @@ public class X509CertificateBuilderImpl implements X509CertificateBuilder {
             if (!errors.isEmpty()) {
                 X509CertificateBuilderException ex = new X509CertificateBuilderException(
                         errors);
-                log.debug("{}; values: {}", ex.getMessage(), this.toString());
+                LOG.debug("{}; values: {}", ex.getMessage(), this.toString());
                 throw ex;
             }
         }
