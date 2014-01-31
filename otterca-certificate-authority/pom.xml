@@ -4,7 +4,7 @@
 	<parent>
 		<artifactId>otterca</artifactId>
 		<groupId>com.otterca</groupId>
-		<version>0.0.4-SNAPSHOT</version>
+		<version>0.0.5-SNAPSHOT</version>
 		<relativePath>..</relativePath>
 	</parent>
 	<artifactId>otterca-certificate-authority</artifactId>
