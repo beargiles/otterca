@@ -56,9 +56,9 @@ public class CryptoConfiguration {
         try {
             factory = CertificateFactory.getInstance("X.509");
         } catch (CertificateException e) {
-            LOG.error("unable to create X.509 CertificateFactory: " + e.getMessage());
+            LOG.error("unable to create X.509 CertificateFactory: " + e.getMessage(), e);
             throw new ExceptionInInitializerError("unable to create X.509 CertificateFactory: "
-                    + e.getMessage(), e);
+                    + e.getMessage());
         }
     }
 
