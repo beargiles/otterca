@@ -294,13 +294,19 @@
 						</configuration>
 						<executions>
 							<execution>
-								<id>aggregate</id>
+								<id>package jar</id>
 								<phase>package</phase>
 								<goals>
-									<goal>aggregate</goal>
 									<goal>jar</goal>
 								</goals>
 							</execution>
+                            <execution>
+                                <id>aggregate</id>
+                                <phase>site</phase>
+                                <goals>
+                                    <goal>aggregate</goal>
+                                </goals>
+                            </execution>
 						</executions>
 					</plugin>
 				</plugins>
