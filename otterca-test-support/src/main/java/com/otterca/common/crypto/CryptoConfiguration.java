@@ -45,7 +45,7 @@ import org.springframework.context.annotation.Profile;
 @Profile("dev")
 @ParametersAreNonnullByDefault
 public class CryptoConfiguration {
-    private static final Logger log = LoggerFactory.getLogger(CryptoConfiguration.class);
+    private static final Logger LOG = LoggerFactory.getLogger(CryptoConfiguration.class);
     private static final ResourceBundle bundle = ResourceBundle.getBundle(CryptoConfiguration.class
             .getName());
     private static final CertificateFactory factory;
@@ -56,9 +56,9 @@ public class CryptoConfiguration {
         try {
             factory = CertificateFactory.getInstance("X.509");
         } catch (CertificateException e) {
-            log.error("unable to create X.509 CertificateFactory: " + e.getMessage());
+            LOG.error("unable to create X.509 CertificateFactory: " + e.getMessage());
             throw new ExceptionInInitializerError("unable to create X.509 CertificateFactory: "
-                    + e.getMessage());
+                    + e.getMessage(), e);
         }
     }
 
@@ -80,19 +80,19 @@ public class CryptoConfiguration {
         if (x509CertUtil == null) {
             String classname = bundle.getString("X509CertificateUtil.classname");
             try {
-                log.debug("using {} for X509CertificiateUtil class", classname);
+                LOG.debug("using {} for X509CertificiateUtil class", classname);
                 Class<?> c = this.getClass().getClassLoader().loadClass(classname);
                 x509CertUtil = (X509CertificateUtil) c.getConstructor(Void.class).newInstance();
             } catch (ClassNotFoundException e) {
-                log.warn("unable to load class {}", classname);
+                LOG.warn("unable to load class {}", classname, e);
             } catch (NoSuchMethodException e) {
-                log.warn("unable to load class {}", classname);
+                LOG.warn("unable to load class {}", classname, e);
             } catch (InvocationTargetException e) {
-                log.warn("unable to load class {}", classname);
+                LOG.warn("unable to load class {}", classname, e);
             } catch (IllegalAccessException e) {
-                log.warn("unable to load class {}", classname);
+                LOG.warn("unable to load class {}", classname, e);
             } catch (InstantiationException e) {
-                log.warn("unable to load class {}", classname);
+                LOG.warn("unable to load class {}", classname, e);
             }
         }
         return x509CertUtil;
