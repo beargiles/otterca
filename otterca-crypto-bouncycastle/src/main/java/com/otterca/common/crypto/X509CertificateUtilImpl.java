@@ -117,6 +117,7 @@ public class X509CertificateUtilImpl implements X509CertificateUtil {
                     }
                 }
             } catch (IOException e) {
+                @SuppressWarnings("all") // suppress SQUID 1166
                 log.info("impossible IOException in X509ExtensionUtil.fromExtensionValue(): "
                         + e.getMessage());
             }
@@ -156,6 +157,7 @@ public class X509CertificateUtilImpl implements X509CertificateUtil {
                     }
                 }
             } catch (IOException e) {
+                @SuppressWarnings("all") // suppress SQUID 1166
                 log.info("impossible IOException in X509ExtensionUtil.fromExtensionValue(): "
                         + e.getMessage());
             }
@@ -185,9 +187,11 @@ public class X509CertificateUtilImpl implements X509CertificateUtil {
                 dates[1] = (period.getNotAfter() != null) ? period
                         .getNotAfter().getDate() : null;
             } catch (IOException e) {
+                @SuppressWarnings("all") // suppress SQUID 1166
                 log.info("impossible IOException in X509ExtensionUtil.fromExtensionValue(): "
                         + e.getMessage());
             } catch (ParseException e) {
+                @SuppressWarnings("all") // suppress SQUID 1166
                 log.info("impossible ParseException: " + e.getMessage());
             }
         }
@@ -285,6 +289,7 @@ public class X509CertificateUtilImpl implements X509CertificateUtil {
                 System.arraycopy(asn1.getOctets(), 2, buffer, 0, buffer.length);
                 depth = (new DERInteger(buffer)).getValue().intValue();
             } catch (IOException e) {
+                @SuppressWarnings("all") // suppress SQUID 1166
                 log.info("impossible IOException in X509ExtensionUtil.fromExtensionValue(): "
                         + e.getMessage());
             }
@@ -352,10 +357,12 @@ public class X509CertificateUtilImpl implements X509CertificateUtil {
                             log.info("unexpected GeneralName type "
                                     + desc.getAccessLocation().getTagNo()
                                     + " in certificate OCSPLocations extension");
+                            break;
                         }
                     }
                 }
             } catch (IOException e) {
+                @SuppressWarnings("all") // suppress SQUID 1166
                 log.info("impossible IOException in X509ExtensionUtil.fromExtensionValue(): "
                         + e.getMessage());
             }
@@ -408,6 +415,7 @@ public class X509CertificateUtilImpl implements X509CertificateUtil {
                     }
                 }
             } catch (IOException e) {
+                @SuppressWarnings("all") // suppress SQUID 1166
                 log.info("impossible IOException in X509ExtensionUtil.fromExtensionValue(): "
                         + e.getMessage());
             }
@@ -460,6 +468,7 @@ public class X509CertificateUtilImpl implements X509CertificateUtil {
                     }
                 }
             } catch (IOException e) {
+                @SuppressWarnings("all") // suppress SQUID 1166
                 log.info("impossible IOException in X509ExtensionUtil.fromExtensionValue(): "
                         + e.getMessage());
             }
@@ -527,6 +536,7 @@ public class X509CertificateUtilImpl implements X509CertificateUtil {
                     }
                 }
             } catch (IOException e) {
+                @SuppressWarnings("all") // suppress SQUID 1166
                 log.info("impossible IOException in X509ExtensionUtil.fromExtensionValue(): "
                         + e.getMessage());
             }
@@ -563,6 +573,7 @@ public class X509CertificateUtilImpl implements X509CertificateUtil {
                 try {
                     is.close();
                 } catch (IOException e) {
+                    @SuppressWarnings("all") // suppress SQUID 1166
                     log.info(
                             "impossible exception closing ByteArrayInputStream: {}",
                             e.getMessage());
