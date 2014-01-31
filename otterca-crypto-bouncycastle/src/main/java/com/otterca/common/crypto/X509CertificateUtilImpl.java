@@ -117,9 +117,8 @@ public class X509CertificateUtilImpl implements X509CertificateUtil {
                     }
                 }
             } catch (IOException e) {
-                @SuppressWarnings("all") // suppress SQUID 1166
                 log.info("impossible IOException in X509ExtensionUtil.fromExtensionValue(): "
-                        + e.getMessage());
+                        + e.getMessage(), e);
             }
         }
         return results;
@@ -157,9 +156,8 @@ public class X509CertificateUtilImpl implements X509CertificateUtil {
                     }
                 }
             } catch (IOException e) {
-                @SuppressWarnings("all") // suppress SQUID 1166
                 log.info("impossible IOException in X509ExtensionUtil.fromExtensionValue(): "
-                        + e.getMessage());
+                        + e.getMessage(), e);
             }
         }
         return results;
@@ -187,12 +185,10 @@ public class X509CertificateUtilImpl implements X509CertificateUtil {
                 dates[1] = (period.getNotAfter() != null) ? period
                         .getNotAfter().getDate() : null;
             } catch (IOException e) {
-                @SuppressWarnings("all") // suppress SQUID 1166
                 log.info("impossible IOException in X509ExtensionUtil.fromExtensionValue(): "
-                        + e.getMessage());
+                        + e.getMessage(), e);
             } catch (ParseException e) {
-                @SuppressWarnings("all") // suppress SQUID 1166
-                log.info("impossible ParseException: " + e.getMessage());
+                log.info("impossible ParseException: " + e.getMessage(), e);
             }
         }
         return dates;
@@ -289,9 +285,8 @@ public class X509CertificateUtilImpl implements X509CertificateUtil {
                 System.arraycopy(asn1.getOctets(), 2, buffer, 0, buffer.length);
                 depth = (new DERInteger(buffer)).getValue().intValue();
             } catch (IOException e) {
-                @SuppressWarnings("all") // suppress SQUID 1166
                 log.info("impossible IOException in X509ExtensionUtil.fromExtensionValue(): "
-                        + e.getMessage());
+                        + e.getMessage(), e);
             }
         }
         return depth;
@@ -362,9 +357,8 @@ public class X509CertificateUtilImpl implements X509CertificateUtil {
                     }
                 }
             } catch (IOException e) {
-                @SuppressWarnings("all") // suppress SQUID 1166
                 log.info("impossible IOException in X509ExtensionUtil.fromExtensionValue(): "
-                        + e.getMessage());
+                        + e.getMessage(), e);
             }
         }
         return locations;
@@ -415,9 +409,8 @@ public class X509CertificateUtilImpl implements X509CertificateUtil {
                     }
                 }
             } catch (IOException e) {
-                @SuppressWarnings("all") // suppress SQUID 1166
                 log.info("impossible IOException in X509ExtensionUtil.fromExtensionValue(): "
-                        + e.getMessage());
+                        + e.getMessage(), e);
             }
         }
         return locations;
@@ -468,9 +461,8 @@ public class X509CertificateUtilImpl implements X509CertificateUtil {
                     }
                 }
             } catch (IOException e) {
-                @SuppressWarnings("all") // suppress SQUID 1166
                 log.info("impossible IOException in X509ExtensionUtil.fromExtensionValue(): "
-                        + e.getMessage());
+                        + e.getMessage(), e);
             }
         }
         return locations;
@@ -536,9 +528,8 @@ public class X509CertificateUtilImpl implements X509CertificateUtil {
                     }
                 }
             } catch (IOException e) {
-                @SuppressWarnings("all") // suppress SQUID 1166
                 log.info("impossible IOException in X509ExtensionUtil.fromExtensionValue(): "
-                        + e.getMessage());
+                        + e.getMessage(), e);
             }
         }
         return locations;
@@ -573,10 +564,9 @@ public class X509CertificateUtilImpl implements X509CertificateUtil {
                 try {
                     is.close();
                 } catch (IOException e) {
-                    @SuppressWarnings("all") // suppress SQUID 1166
                     log.info(
                             "impossible exception closing ByteArrayInputStream: {}",
-                            e.getMessage());
+                            e.getMessage(), e);
                 }
             }
         }
