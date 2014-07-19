@@ -8,6 +8,7 @@
 		<relativePath>..</relativePath>
 	</parent>
 	<artifactId>otterca-certificate-authority</artifactId>
+	<packaging>pom</packaging>
 	<name>OtterCA Certificate Authority</name>
 	<description>
     The Certificate Authority is responsible for actually signing
@@ -17,4 +18,10 @@
     removable key material and enter a decryption password.)
   </description>
 	<build />
+	<modules>
+		<module>otterca-ca-client</module>
+		<module>otterca-ca-server</module>
+		<module>otterca-ca-webapp</module>
+		<module>ca-api</module>
+	</modules>
 </project>
