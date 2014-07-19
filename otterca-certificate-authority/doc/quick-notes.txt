@@ -1,0 +1,11 @@
+Quick notes on the implementation.
+
+1. The CA keys are maintained in a dedicated KeyStore. They should not
+   be commingled with certs maintained in the repository.
+   
+2. The policy specifies what permissions are allowed on certificate it
+   signs. Each CA key has a single policy but each policy can have multiple
+   CA keys.
+   
+3. There needs to be a way to create and retire CA keys. Or it could be
+   handled outside of the application.
