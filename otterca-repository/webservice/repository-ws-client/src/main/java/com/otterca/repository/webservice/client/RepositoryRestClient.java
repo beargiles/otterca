@@ -1,4 +1,4 @@
-package com.otterca.certificateAuthority.webservice.client;
+package com.otterca.repository.webservice.client;
 
 import java.security.KeyStore;
 
@@ -9,7 +9,7 @@ import javax.security.cert.X509Certificate;
  * 
  * @author Bear Giles <bgiles@coyotesong.com>
  */
-public interface CertificateAuthorityRestClient {
+public interface RepositoryRestClient {
 	/**
 	 * Create and sign a certificate. The subject must be signed
 	 * by a valid Registration Authority key. (This is the way the

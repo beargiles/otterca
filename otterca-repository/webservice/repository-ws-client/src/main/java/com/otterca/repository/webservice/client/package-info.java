@@ -5,4 +5,4 @@
  * 
  * @author Bear Giles <bgiles@coyotesong.com>
  */
-package com.otterca.certificateAuthority.webservice.client;
+package com.otterca.repository.webservice.client;
