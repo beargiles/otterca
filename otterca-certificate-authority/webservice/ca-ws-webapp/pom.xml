@@ -6,5 +6,9 @@
  		<version>0.0.5-SNAPSHOT</version>
 	</parent>
 	<artifactId>ca-ws-webapp</artifactId>
-	<name>OtterCA Certificate Authority Webservice Webapp</name>
+	<name>OtterCA Certificate Authority: Webservice Webapp</name>
+	<description>
+		This is a simple webapp containing the REST server.
+		It allows the webservice to deployed to an app server.
+	</description>
 </project>

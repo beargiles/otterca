@@ -2,13 +2,13 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
-		<groupId>com.otterca</groupId>
-		<artifactId>otterca</artifactId>
+		<groupId>com.otterca.repository</groupId>
+		<artifactId>repository</artifactId>
 		<version>0.0.5-SNAPSHOT</version>
 		<relativePath>..</relativePath>
 	</parent>
-	<artifactId>otterca-persistence-google-datastore</artifactId>
-	<name>OtterCA Persistence using Google DataStore</name>
+	<artifactId>repository-persistence-google-datastore</artifactId>
+	<name>OtterCA Repository: Persistence using Google DataStore</name>
 	<description>The module implements the Persistence API using the Google DataStore NoSQL.</description>
 	<dependencies>
 		<dependency>

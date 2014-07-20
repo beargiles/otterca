@@ -33,6 +33,11 @@
 				<artifactId>ca-api</artifactId>
 				<version>${otterca.version}</version>
 			</dependency>
+			<dependency>
+				<groupId>com.otterca.certificate-authority</groupId>
+				<artifactId>ca-crypto-api</artifactId>
+				<version>${otterca.version}</version>
+			</dependency>
 		</dependencies>
 	</dependencyManagement>
 </project>

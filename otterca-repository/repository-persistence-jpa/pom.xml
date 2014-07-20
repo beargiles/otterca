@@ -2,13 +2,13 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
-		<artifactId>otterca</artifactId>
-		<groupId>com.otterca</groupId>
+		<groupId>com.otterca.repository</groupId>
+		<artifactId>repository</artifactId>
 		<version>0.0.5-SNAPSHOT</version>
 		<relativePath>..</relativePath>
 	</parent>
-	<artifactId>otterca-persistence-jpa</artifactId>
-	<name>OtterCA Persistence using JPA</name>
+	<artifactId>repository-persistence-jpa</artifactId>
+	<name>OtterCA Repository: Persistence using JPA</name>
 	<description>This module implements the Persistence API using a traditional RDMBS.</description>
 	<dependencies>
 		<dependency>

@@ -6,7 +6,11 @@
 		<version>0.0.5-SNAPSHOT</version>
 	</parent>
 	<artifactId>ca-ws-server</artifactId>
-	<name>OtterCA Certificate Authority Webservice Server</name>
+	<name>OtterCA Certificate Authority: Webservice Server</name>
+	<description>
+		This is a simple REST server. It uses Jetty for
+		integration testing.
+	</description>
   
 	<build>
 		<plugins>

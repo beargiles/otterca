@@ -6,5 +6,8 @@
 		<version>0.0.5-SNAPSHOT</version>
 	</parent>
 	<artifactId>ca-ws-client</artifactId>
-	<name>OtterCA Certificate Authority Webservice Client</name>
+	<name>OtterCA Certificate Authority: Webservice Client</name>
+	<description>
+		This is a simple java REST client used primarily in testing.
+	</description>
 </project>

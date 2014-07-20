@@ -9,7 +9,7 @@
 	</parent>
 	<artifactId>ca-crypto-api</artifactId>
 
-	<name>OtterCA Cryptographic API</name>
+	<name>OtterCA Certificate Authority: Cryptographic API</name>
 	<description>
 		The Cryptographic API provides an interface to the 
 		cryptographic libraries. It is very important that all
