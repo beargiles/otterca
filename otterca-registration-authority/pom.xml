@@ -2,12 +2,13 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
-		<artifactId>otterca</artifactId>
 		<groupId>com.otterca</groupId>
+		<artifactId>otterca</artifactId>
 		<version>0.0.5-SNAPSHOT</version>
-		<relativePath>..</relativePath>
 	</parent>
-	<artifactId>otterca-registration-authority</artifactId>
+	<groupId>com.otterca.registration-authority</groupId>
+	<artifactId>registration-authority</artifactId>
+	<packaging>pom</packaging>
 	<name>OtterCA Registration Authority</name>
 	<description>
     The Registration Authority (RA) is responsible for collecting accreditation
@@ -21,12 +22,8 @@
     and accepting and disseminating revocation requests.
   </description>
 
-	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-compiler-plugin</artifactId>
-			</plugin>
-		</plugins>
-	</build>
+	<build />
+	<modules>
+		<module>webservice</module>
+	</modules>
 </project>
