@@ -7,19 +7,21 @@
 		<version>0.0.5-SNAPSHOT</version>
 	</parent>
 	<groupId>com.otterca.repository</groupId>
-	<artifactId>repository</artifactId>
+	<artifactId>repositlry</artifactId>
 	<packaging>pom</packaging>
 	<name>OtterCA Repository</name>
-
 	<description>
-		The Repository is responsible for publishing certificates
-		and CRLs. It is also responsible for OSCP.
-  	</description>
+	The Repository is responsible for publishing the Certificates
+	and CRLs. The interface is defined by several RFCs. The repository
+	should also support OCSP.
+	</description>
 
 	<build />
 	<modules>
 		<module>repository-persistence-api</module>
+		<module>repository-test-support</module>
+		<!--<module>repository-persistence-google-datastore<module>-->
 		<module>repository-persistence-jpa</module>
-		<module>repository-persistence-google-datastore</module>
+		<module>webservice</module>
 	</modules>
 </project>
