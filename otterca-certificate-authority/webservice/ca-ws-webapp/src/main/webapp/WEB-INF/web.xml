@@ -3,7 +3,7 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
 
-    <display-name>Project Student Webservice</display-name>
+    <display-name>Otter CA Certificate Authority Webservice</display-name>
     
     <context-param>
         <param-name>contextClass</param-name>
@@ -24,7 +24,7 @@
 <!-- 
     <filter>
         <filter-name>REST parameter filter</filter-name>
-        <filter-class>com.otterca.ca..webservice.security.RestParameterFilter</filter-class>
+        <filter-class>com.otterca.ca.webservice.security.RestParameterFilter</filter-class>
          <init-param>
             <param-name>valid-nouns</param-name>
             <param-value>classroom,course,instructor,section,student,term,testRun</param-value>
