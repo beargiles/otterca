@@ -20,14 +20,16 @@
  * 
  * Copyright (c) 2013 Bear Giles <bgiles@coyotesong.com>
  */
-package com.otterca.ca.webservice.server.rest;
+package com.otterca.repository.webservice.server.rest;
 
 /**
- * Exception thrown by unit tests. We use this to avoid cluttering up log with
- * bogus stack traces during testing.
+ * XML/JSON payloads that can be validated.
+ * 
+ * TODO: add way to get list of issues.
  * 
  * @author Bear Giles <bgiles@coyotesong.com>
  */
-public class UnitTestException extends RuntimeException {
-    private static final long serialVersionUID = 1L;
+public interface Validatable {
+
+    boolean validate();
 }

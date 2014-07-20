@@ -3,7 +3,7 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
 
-    <display-name>OtterCA Certificate Authority: Webservice</display-name>
+    <display-name>OtterCA Repository: Webservice</display-name>
     
     <context-param>
         <param-name>contextClass</param-name>
@@ -12,11 +12,11 @@
     <context-param>
         <param-name>contextConfigLocation</param-name>
         <param-value>
-            com.otterca.ca.webservice.config.RestApplicationContext
+            com.otterca.repository.webservice.config.RestApplicationContext
         </param-value>
         <!--
-            com.otterca.ca.webservice.config.TestRestApplicationContext
-            com.otterca.ca.webservice.config.RestSecurityApplicationContext
+            com.otterca.repository.webservice.config.TestRestApplicationContext
+            com.otterca.repository.webservice.config.RestSecurityApplicationContext
         -->
     </context-param>
 

@@ -20,26 +20,14 @@
  * 
  * Copyright (c) 2013 Bear Giles <bgiles@coyotesong.com>
  */
-package com.otterca.ca.webservice.config;
-
-import javax.annotation.Resource;
-
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.ImportResource;
-import org.springframework.core.env.Environment;
+package com.otterca.repository.webservice.server.rest;
 
 /**
- * Spring configuration class for REST services.
+ * Exception thrown by unit tests. We use this to avoid cluttering up log with
+ * bogus stack traces during testing.
  * 
  * @author Bear Giles <bgiles@coyotesong.com>
  */
-@Configuration
-@ComponentScan(basePackages = { "com.otterca.ca.webservice.server.rest" })
-@ImportResource({ "classpath:applicationContext-ca-rest.xml" })
-// @PropertySource("classpath:application.properties")
-public class RestApplicationContext {
-
-    @Resource
-    private Environment environment;
+public class UnitTestException extends RuntimeException {
+    private static final long serialVersionUID = 1L;
 }

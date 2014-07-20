@@ -20,16 +20,25 @@
  * 
  * Copyright (c) 2013 Bear Giles <bgiles@coyotesong.com>
  */
-package com.otterca.ca.webservice.server.rest;
+package com.otterca.repository.webservice.server.rest;
+
+import javax.ws.rs.GET;
+import javax.ws.rs.Path;
+import javax.ws.rs.Produces;
+import javax.ws.rs.core.MediaType;
+
+import org.springframework.stereotype.Service;
 
 /**
- * XML/JSON payloads that can be validated.
+ * @author bgiles
  * 
- * TODO: add way to get list of issues.
- * 
- * @author Bear Giles <bgiles@coyotesong.com>
  */
-public interface Validatable {
-
-    boolean validate();
+@Service
+@Path("/")
+public class RootResource {
+    @GET
+    @Produces({ MediaType.TEXT_PLAIN })
+    public String get() {
+        return "foo";
+    }
 }

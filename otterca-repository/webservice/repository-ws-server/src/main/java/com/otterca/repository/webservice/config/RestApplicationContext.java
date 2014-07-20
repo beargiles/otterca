@@ -20,25 +20,26 @@
  * 
  * Copyright (c) 2013 Bear Giles <bgiles@coyotesong.com>
  */
-package com.otterca.ca.webservice.server.rest;
+package com.otterca.repository.webservice.config;
 
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.Produces;
-import javax.ws.rs.core.MediaType;
+import javax.annotation.Resource;
 
-import org.springframework.stereotype.Service;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.ImportResource;
+import org.springframework.core.env.Environment;
 
 /**
- * @author bgiles
+ * Spring configuration class for REST services.
  * 
+ * @author Bear Giles <bgiles@coyotesong.com>
  */
-@Service
-@Path("/")
-public class RootResource {
-    @GET
-    @Produces({ MediaType.TEXT_PLAIN })
-    public String get() {
-        return "foo";
-    }
+@Configuration
+@ComponentScan(basePackages = { "com.otterca.repository.webservice.server.rest" })
+@ImportResource({ "classpath:applicationContext-repository-rest.xml" })
+// @PropertySource("classpath:application.properties")
+public class RestApplicationContext {
+
+    @Resource
+    private Environment environment;
 }
