@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!-- this throws "Unknown configuration type: Configuration in org.eclipse.jetty.xml.XmlConfiguration" -->
+<Configuration id="wac" class="org.eclipse.jetty.webapp.WebAppContext">
+<!-- 
+	<New id="otterCaCaDS" class="org.eclipse.jetty.plus.jndi.Resource">
+		<Arg>
+			<Ref id="wac" />
+		</Arg>
+		<Arg>jdbc/otterCaCaDS</Arg>
+		<Arg>
+ 			<New class="org.apache.commons.dbcp.BasicDataSource">
+				<Set name="driverClassName">org.postgresql.Driver</Set>
+				<Set name="url">jdbc:postgresql://localhost/ottercaca</Set>
+				<Set name="username">ca</Set>
+				<Set name="password">ca</Set>
+				<Set name="validationQuery">SELECT 1</Set>
+			</New>
+		</Arg>
+	</New>
+ -->
+</Configuration>
