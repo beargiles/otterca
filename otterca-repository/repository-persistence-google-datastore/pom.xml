@@ -12,16 +12,12 @@
 	<description>The module implements the Persistence API using the Google DataStore NoSQL.</description>
 	<dependencies>
 		<dependency>
-			<groupId>com.otterca</groupId>
-			<artifactId>otterca-persistence-api</artifactId>
+			<groupId>com.otterca.repository</groupId>
+			<artifactId>repository-persistence-api</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>com.otterca</groupId>
-			<artifactId>otterca-crypto-api</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>com.otterca</groupId>
-			<artifactId>otterca-test-support</artifactId>
+			<groupId>com.otterca.repository</groupId>
+			<artifactId>repository-test-support</artifactId>
 			<scope>test</scope>
 		</dependency>
 
@@ -89,25 +85,6 @@
 			<artifactId>cglib-nodep</artifactId>
 			<version>2.2.2</version>
 			<scope>test</scope>
-		</dependency>
-
-		<!-- export/import restricted stanza - need it for testing -->
-		<!-- any implementation will work - just set correct property -->
-		<dependency>
-			<groupId>com.otterca</groupId>
-			<artifactId>otterca-crypto-bouncycastle</artifactId>
-			<version>${otterca.version}</version>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.bouncycastle</groupId>
-			<artifactId>bcprov-jdk15on</artifactId>
-			<version>1.47</version>
-		</dependency>
-		<dependency>
-			<groupId>org.bouncycastle</groupId>
-			<artifactId>bcpkix-jdk15on</artifactId>
-			<version>1.47</version>
 		</dependency>
 	</dependencies>
 

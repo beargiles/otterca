@@ -12,12 +12,8 @@
 	<description>This module implements the Persistence API using a traditional RDMBS.</description>
 	<dependencies>
 		<dependency>
-			<groupId>com.otterca</groupId>
-			<artifactId>otterca-crypto-api</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>com.otterca</groupId>
-			<artifactId>otterca-persistence-api</artifactId>
+			<groupId>com.otterca.repository</groupId>
+			<artifactId>repository-persistence-api</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>org.jasypt</groupId>
