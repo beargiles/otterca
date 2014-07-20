@@ -3,7 +3,7 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
 
-    <display-name>Project Student Webservice</display-name>
+    <display-name>OtterCA Repository Webservice</display-name>
     
     <context-param>
         <param-name>contextClass</param-name>
@@ -12,19 +12,19 @@
     <context-param>
         <param-name>contextConfigLocation</param-name>
         <param-value>
-            com.otterca.ca.webservice.config.RestApplicationContext
+            com.otterca.repository.webservice.config.RestApplicationContext
         </param-value>
         <!-- 
-            com.otterca.ca.config.PersistenceJpaConfig
-            com.otterca.ca.config.BusinessApplicationContext
-            com.otterca.ca.webservice.config.RestSecurityApplicationContext
+            com.otterca.repository.config.PersistenceJpaConfig
+            com.otterca.repository.config.BusinessApplicationContext
+            com.otterca.repository.webservice.config.RestSecurityApplicationContext
          -->
     </context-param>
 
 <!-- 
     <filter>
         <filter-name>REST parameter filter</filter-name>
-        <filter-class>com.otterca.ca..webservice.security.RestParameterFilter</filter-class>
+        <filter-class>com.otterca.repository.webservice.security.RestParameterFilter</filter-class>
          <init-param>
             <param-name>valid-nouns</param-name>
             <param-value>classroom,course,instructor,section,student,term,testRun</param-value>
@@ -59,8 +59,8 @@
     
     <!-- 
     <resource-ref>
-        <description>OtterCa Certificate Authority Datasource</description>
-        <res-ref-name>jdbc/otterCaCaDS</res-ref-name>
+        <description>OtterCa Repository Datasource</description>
+        <res-ref-name>jdbc/otterCaRepositoryDS</res-ref-name>
         <res-type>javax.sql.DataSource</res-type>
         <res-auth>Container</res-auth>
     </resource-ref>

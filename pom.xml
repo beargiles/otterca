@@ -9,7 +9,7 @@
 	<description>
 		This is the parent of all OtterCA modules. These modules are:
 
-        Registration Authority (RA) - provides a mechanism for subjects
+		Registration Authority (RA) - provides a mechanism for subjects
 		and Relying Entities to request certificates or revocations.
 
 		Certificate Authority (CA) - provides a mechanism for actually
@@ -62,10 +62,10 @@
 	</scm>
 
 	<modules>
-		<module>otterca-test-support</module>
-
 		<!--<module>otterca-domain</module>-->
+<!--
 		<module>otterca-business</module>
+-->
 
 		<module>otterca-repository</module>
 		<module>otterca-certificate-authority</module>
@@ -114,12 +114,6 @@
 				<groupId>com.otterca</groupId>
 				<artifactId>otterca-crypto-api</artifactId>
 				<version>${otterca.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>com.otterca</groupId>
-				<artifactId>otterca-test-support</artifactId>
-				<version>${otterca.version}</version>
-				<scope>test</scope>
 			</dependency>
 
 			<dependency>
@@ -304,11 +298,6 @@
 				<artifactId>mockito-core</artifactId>
 				<version>1.9.0</version>
 				<scope>test</scope>
-			</dependency>
-			<dependency>
-				<groupId>org.springframework</groupId>
-				<artifactId>spring-test</artifactId>
-				<version>${spring.version}</version>
 			</dependency>
 			<dependency> <!-- for naming -->
 				<groupId>org.apache.tomcat</groupId>

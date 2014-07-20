@@ -12,12 +12,12 @@
 
 	<dependencies>
 		<dependency>
-			<groupId>com.otterca</groupId>
-			<artifactId>otterca-persistence-api</artifactId>
+			<groupId>com.otterca.repository</groupId>
+			<artifactId>repository-persistence-api</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>com.otterca</groupId>
-			<artifactId>otterca-crypto-api</artifactId>
+			<groupId>com.otterca.certificate-authority</groupId>
+			<artifactId>ca-crypto-api</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>org.slf4j</groupId>

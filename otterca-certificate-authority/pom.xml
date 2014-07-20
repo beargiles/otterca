@@ -5,6 +5,7 @@
 		<groupId>com.otterca</groupId>
 		<artifactId>otterca</artifactId>
 		<version>0.0.5-SNAPSHOT</version>
+		<relativePath>..</relativePath>
 	</parent>
 	<groupId>com.otterca.certificate-authority</groupId>
 	<artifactId>certificate-authority</artifactId>
@@ -22,6 +23,7 @@
 	<build />
 	<modules>
 		<module>ca-crypto-api</module>
+		<module>ca-test-support</module>
 		<module>ca-crypto-bouncycastle</module>
 		<module>ca-api</module>
 		<module>webservice</module>
@@ -36,6 +38,11 @@
 			<dependency>
 				<groupId>com.otterca.certificate-authority</groupId>
 				<artifactId>ca-crypto-api</artifactId>
+				<version>${otterca.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.otterca.certificate-authority</groupId>
+				<artifactId>ca-test-support</artifactId>
 				<version>${otterca.version}</version>
 			</dependency>
 		</dependencies>

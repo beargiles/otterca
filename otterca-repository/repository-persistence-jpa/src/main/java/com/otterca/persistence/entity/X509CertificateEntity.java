@@ -49,7 +49,7 @@ import javax.persistence.Transient;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.otterca.common.crypto.X509CertificateUtil;
+//import com.otterca.common.crypto.X509CertificateUtil;
 
 /**
  * Persisted information about an X509 Certificate.
@@ -84,8 +84,8 @@ public class X509CertificateEntity implements Serializable {
 
     private static final CertificateFactory certificateFactory;
 
-    @Autowired
-    private transient X509CertificateUtil x509CertUtil;
+    //@Autowired
+    //private transient X509CertificateUtil x509CertUtil;
 
     @Id
     @GeneratedValue(strategy = AUTO)
@@ -199,13 +199,13 @@ public class X509CertificateEntity implements Serializable {
         notBefore = cert.getNotBefore();
         notAfter = cert.getNotAfter();
 
-        name = x509CertUtil.getName(cert);
-        fingerprint = x509CertUtil.getFingerprint(cert);
-        certHash = x509CertUtil.getCertificateHash(cert);
-        iHash = x509CertUtil.getIHash(cert);
-        sHash = x509CertUtil.getSHash(cert);
-        akidHash = x509CertUtil.getAkidHash(cert);
-        skidHash = x509CertUtil.getSkidHash(cert);
+        //name = x509CertUtil.getName(cert);
+        //fingerprint = x509CertUtil.getFingerprint(cert);
+        //certHash = x509CertUtil.getCertificateHash(cert);
+        //iHash = x509CertUtil.getIHash(cert);
+        //sHash = x509CertUtil.getSHash(cert);
+        //akidHash = x509CertUtil.getAkidHash(cert);
+        //skidHash = x509CertUtil.getSkidHash(cert);
     }
 
     /**

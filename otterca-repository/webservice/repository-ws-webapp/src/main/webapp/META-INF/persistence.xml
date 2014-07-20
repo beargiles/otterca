@@ -8,10 +8,10 @@
 	<!-- we normally want two persistence units. Development/testing can use 
 		a local non-JTA one and production a JTA one -->
 	<!-- 
-	<persistence-unit name="otterCaCaPU-local"
+	<persistence-unit name="otterCaRepositoryPU-local"
 		transaction-type="RESOURCE_LOCAL">
 		<provider>org.hibernate.ejb.HibernatePersistence</provider>
-		<non-jta-data-source>jdbc/otterCaCaDS</non-jta-data-source>
+		<non-jta-data-source>jdbc/otterCaRepositoryDS</non-jta-data-source>
 	</persistence-unit>
 	 -->
 </persistence>
