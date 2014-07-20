@@ -70,6 +70,10 @@
 
 		<module>otterca-persistence-google-datastore</module>
 		<module>otterca-persistence-jpa</module>
+
+		<module>otterca-domain</module>
+		<module>otterca-business</module>
+
 		<module>otterca-repository</module>
 		<module>otterca-certificate-authority</module>
 		<module>otterca-registration-authority</module>
