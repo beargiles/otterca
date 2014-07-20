@@ -2,14 +2,15 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
-		<artifactId>otterca</artifactId>
 		<groupId>com.otterca</groupId>
+		<artifactId>otterca</artifactId>
 		<version>0.0.5-SNAPSHOT</version>
-		<relativePath>..</relativePath>
 	</parent>
-	<artifactId>otterca-certificate-authority</artifactId>
+	<groupId>com.otterca.certificate-authority</groupId>
+	<artifactId>certificate-authority</artifactId>
 	<packaging>pom</packaging>
 	<name>OtterCA Certificate Authority</name>
+
 	<description>
     The Certificate Authority is responsible for actually signing
     certificates. It should never be directly accessible by the public
@@ -17,11 +18,21 @@
     keys. (E.g., it may be necessary for an authorized user to insert
     removable key material and enter a decryption password.)
   </description>
+
 	<build />
 	<modules>
-		<module>otterca-ca-client</module>
-		<module>otterca-ca-server</module>
-		<module>otterca-ca-webapp</module>
+		<module>ca-crypto-api</module>
+		<module>ca-crypto-bouncycastle</module>
 		<module>ca-api</module>
+		<module>webservice</module>
 	</modules>
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>com.otterca.certificate-authority</groupId>
+				<artifactId>ca-api</artifactId>
+				<version>${otterca.version}</version>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
 </project>

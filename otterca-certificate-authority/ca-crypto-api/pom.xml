@@ -2,12 +2,12 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
-		<artifactId>otterca</artifactId>
-		<groupId>com.otterca</groupId>
+		<groupId>com.otterca.certificate-authority</groupId>
+		<artifactId>certificate-authority</artifactId>
 		<version>0.0.5-SNAPSHOT</version>
 		<relativePath>..</relativePath>
 	</parent>
-	<artifactId>otterca-crypto-api</artifactId>
+	<artifactId>ca-crypto-api</artifactId>
 
 	<name>OtterCA Cryptographic API</name>
 	<description>
