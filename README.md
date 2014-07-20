@@ -1,7 +1,5 @@
-otterca
-=======
-
 Otter Certificate Authority
+===========================
 
 This is a simple Certificate Authority. It consists of three
 separate but codependent webservices. This separation is overkill
@@ -9,14 +7,15 @@ on the smallest sites but it serves "separation of responsibilities"
 and allows the most critical services to be deployed on a highly
 secured system.
 
-_Registration Authority_ 
+Registration Authority
+----------------------
 
 The Registration Authority (RA) is responsible for collecting information 
 and vetting information about subjects. In this design it is also
 responsible for final approval for issuing a certificate.
 
 Operating a general purpose RA is a significant undertaking but
-for internal uses it is sufficient to look up entries in an
+for internal uses it is often sufficient to look up entries in an
 Active Directory or LDAP server. Even public RAs can provide a
 minimal level of authentication by verifying email address,
 domain ownership (e.g., by making a nonce visible on the DNS
@@ -26,7 +25,8 @@ customization.
 
 Upon approval the RA passes the request to the CA for signing.
 
-_Certificate Authority_
+Certificate Authority
+---------------------
 
 The Certificate Authority (CA) is responsible for actually signing
 certificates. It is not responsible for vetting subjects or seeking
@@ -49,7 +49,8 @@ The CA gets requests from the RA. For security reasons the CA:
 
 After signature the CA passes the certificate to the Repository.
 
-_Repository_
+Repository
+-----------
 
 The Repository (Repository) is responsible for publishing the
 certificates. The required API is defined by various RFCs. (List
