@@ -1,0 +1,26 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.otterca.certificate-authority</groupId>
+		<artifactId>certificate-authority</artifactId>
+		<version>0.0.5-SNAPSHOT</version>
+	</parent>
+	<groupId>com.otterca.certificate-authority.webservice</groupId>
+	<artifactId>webservice</artifactId>
+	<packaging>pom</packaging>
+	<name>OtterCA Certificate Authority: Webservice</name>
+	<description>
+    The Certificate Authority is responsible for actually signing
+    certificates. It should never be directly accessible by the public
+    but an internal interface may be required to access high-value
+    keys. (E.g., it may be necessary for an authorized user to insert
+    removable key material and enter a decryption password.)
+  </description>
+	<build />
+	<modules>
+		<module>ca-ws-client</module>
+		<module>ca-ws-server</module>
+		<module>ca-ws-webapp</module>
+	</modules>
+</project>
